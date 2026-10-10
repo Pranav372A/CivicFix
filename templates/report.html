@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Report Civic Issue - CivicFix</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        .header {
+            background: #2346a3;
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h2 {
+            margin: 0;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 600px;
+            max-width: 90%;
+            margin: 40px auto;
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2346a3;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-top: 16px;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+            font-family: Arial, sans-serif;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #2346a3;
+        }
+
+        textarea {
+            height: 110px;
+            resize: vertical;
+        }
+
+        .hint {
+            font-size: 12px;
+            color: #777;
+            margin-top: 4px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 28px;
+            padding: 14px;
+            background: #2346a3;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #18357d;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #2346a3;
+            text-decoration: none;
+        }
+
+        .back:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h2>🚧 CivicFix</h2>
+        <a href="/">Home</a>
+    </div>
+
+    <div class="container">
+
+        <h1>Report a Civic Issue</h1>
+
+        <p class="subtitle">
+            Help your community by reporting a civic problem.
+        </p>
+
+        <form method="POST">
+
+            <!-- User -->
+            <label for="user_id">User ID</label>
+
+            <input
+                type="number"
+                id="user_id"
+                name="user_id"
+                placeholder="Enter user ID"
+                required
+            >
+
+            <div class="hint">
+                Example: 1
+            </div>
+
+
+            <!-- Category -->
+            <label for="category_id">Category ID</label>
+
+            <input
+                type="number"
+                id="category_id"
+                name="category_id"
+                placeholder="Enter category ID"
+                required
+            >
+
+            <div class="hint">
+                Example: 1 = Pothole, depending on your category table
+            </div>
+
+
+            <!-- Location -->
+            <label for="location_id">Location ID</label>
+
+            <input
+                type="number"
+                id="location_id"
+                name="location_id"
+                placeholder="Enter location ID"
+                required
+            >
+
+            <div class="hint">
+                Example: 1
+            </div>
+
+
+            <!-- Title -->
+            <label for="title">Issue Title</label>
+
+            <input
+                type="text"
+                id="title"
+                name="title"
+                placeholder="Example: Large pothole near main road"
+                required
+            >
+
+
+            <!-- Description -->
+            <label for="description">Description</label>
+
+            <textarea
+                id="description"
+                name="description"
+                placeholder="Describe the civic issue in detail..."
+                required
+            ></textarea>
+
+
+            <!-- Severity -->
+            <label for="severity">Severity</label>
+
+            <select
+                id="severity"
+                name="severity"
+                required
+            >
+                <option value="">Select severity</option>
+                <option value="1">1 - Low</option>
+                <option value="2">2 - Moderate</option>
+                <option value="3">3 - High</option>
+                <option value="4">4 - Very High</option>
+                <option value="5">5 - Critical</option>
+            </select>
+
+
+            <!-- Affected People -->
+            <label for="affected_people">
+                Estimated Affected People
+            </label>
+
+            <input
+                type="number"
+                id="affected_people"
+                name="affected_people"
+                value="1"
+                min="1"
+                required
+            >
+
+            <div class="hint">
+                Approximate number of people affected by this issue.
+            </div>
+
+
+            <!-- Submit -->
+            <button type="submit">
+                Submit Civic Complaint
+            </button>
+
+        </form>
+
+        <a href="/" class="back">
+            ← Back to CivicFix Home
+        </a>
+
+    </div>
+
+</body>
+</html>
